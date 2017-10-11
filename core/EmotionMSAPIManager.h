@@ -14,7 +14,7 @@ typedef void(^EmotionMSAPIManagerCompletionBlock)(EmotionMSAPIManager *service, 
 
 @interface EmotionMSAPIManager : NSObject
 +(id)shared;
--(void)enrollWithImage: (ImageDescription*)image inGallery: (NSString*)gallery withCompletionBlock: (EmotionMSAPIManagerCompletionBlock)completionBlock;
+-(void)analyseEmotionFromImage: (UIImage*)image progress:(void (^)(NSProgress *uploadProgress)) uploadProgressBlock withCompletionBlock: (EmotionMSAPIManagerCompletionBlock)completionBlock;
 
 
 @end

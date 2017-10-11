@@ -11,6 +11,7 @@
 #import "UtilHelper.h"
 #import "UINavigationController+M13ProgressViewBar.h"
 
+
 @interface PersonsTableViewController ()
 @property(nonatomic, strong) NSArray<Person*> *persons;
 @end
@@ -34,7 +35,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self loadPersons];
 }
 
 -(void)loadPersons

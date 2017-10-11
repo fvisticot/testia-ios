@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		10F83FDD9772218FDC093253 /* libPods-testia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA85D120E65B41FC7711A22 /* libPods-testia.a */; };
+		4C0BA91E1F8CE6EE0093C71F /* MainMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BA91D1F8CE6EE0093C71F /* MainMenuTableViewController.m */; };
+		4C0BA9211F8D4FDA0093C71F /* EmotionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BA9201F8D4FDA0093C71F /* EmotionViewController.m */; };
+		4C0BA9241F8D505C0093C71F /* OCRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BA9231F8D505C0093C71F /* OCRViewController.m */; };
 		4C23E6831F706CA7007E9BAF /* UtilHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C23E6821F706CA7007E9BAF /* UtilHelper.m */; };
 		4C5775771F6DD9B800479E26 /* OCRMSAPIManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C5775751F6DD9B800479E26 /* OCRMSAPIManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4C5775781F6DD9B800479E26 /* OCRMSAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5775761F6DD9B800479E26 /* OCRMSAPIManager.m */; };
@@ -30,6 +33,10 @@
 		4CC76BB71F03C7A700340259 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC76BB51F03C7A700340259 /* Main.storyboard */; };
 		4CC76BBC1F03C7A700340259 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC76BBA1F03C7A700340259 /* LaunchScreen.storyboard */; };
 		4CC76BBF1F03C7A700340259 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC76BBE1F03C7A700340259 /* main.m */; };
+		4CCE6DE01F7D979F008854BD /* CustomURLCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CCE6DDE1F7D979F008854BD /* CustomURLCache.h */; };
+		4CCE6DE11F7D979F008854BD /* CustomURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCE6DDF1F7D979F008854BD /* CustomURLCache.m */; };
+		4CCE6DE21F7D979F008854BD /* CustomURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCE6DDF1F7D979F008854BD /* CustomURLCache.m */; };
+		4CCE6DE31F7D979F008854BD /* CustomURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCE6DDF1F7D979F008854BD /* CustomURLCache.m */; };
 		4CD30DC11F6D4E5A0022BD4C /* ImageDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C83333A1F536243000BB5C0 /* ImageDescription.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CD30DC21F6D4E6F0022BD4C /* EmotionMSAPIManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C2DBC161F6C4B8F00A22220 /* EmotionMSAPIManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CD30DC31F6D4E760022BD4C /* FaceRecognitionMSFaceAPIManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C9FBDD91F6AF83C000AF394 /* FaceRecognitionMSFaceAPIManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -97,6 +104,12 @@
 
 /* Begin PBXFileReference section */
 		47E285334D1A5E360FFBCAF7 /* Pods-testia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testia/Pods-testia.debug.xcconfig"; sourceTree = "<group>"; };
+		4C0BA91C1F8CE6EE0093C71F /* MainMenuTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuTableViewController.h; sourceTree = "<group>"; };
+		4C0BA91D1F8CE6EE0093C71F /* MainMenuTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuTableViewController.m; sourceTree = "<group>"; };
+		4C0BA91F1F8D4FDA0093C71F /* EmotionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmotionViewController.h; sourceTree = "<group>"; };
+		4C0BA9201F8D4FDA0093C71F /* EmotionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmotionViewController.m; sourceTree = "<group>"; };
+		4C0BA9221F8D505C0093C71F /* OCRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCRViewController.h; sourceTree = "<group>"; };
+		4C0BA9231F8D505C0093C71F /* OCRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCRViewController.m; sourceTree = "<group>"; };
 		4C23E6811F706CA7007E9BAF /* UtilHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilHelper.h; sourceTree = "<group>"; };
 		4C23E6821F706CA7007E9BAF /* UtilHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilHelper.m; sourceTree = "<group>"; };
 		4C2DBC161F6C4B8F00A22220 /* EmotionMSAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionMSAPIManager.h; sourceTree = "<group>"; };
@@ -140,6 +153,8 @@
 		4CC76BBD1F03C7A700340259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CC76BBE1F03C7A700340259 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4CC76BC81F03E51900340259 /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
+		4CCE6DDE1F7D979F008854BD /* CustomURLCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomURLCache.h; sourceTree = "<group>"; };
+		4CCE6DDF1F7D979F008854BD /* CustomURLCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomURLCache.m; sourceTree = "<group>"; };
 		4CD30DCA1F6D508A0022BD4C /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD30DCC1F6D50BE0022BD4C /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD30DD31F6D56CE0022BD4C /* MenuTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
@@ -237,6 +252,8 @@
 				4CD30DE21F6D62F20022BD4C /* Person.m */,
 				4C5775751F6DD9B800479E26 /* OCRMSAPIManager.h */,
 				4C5775761F6DD9B800479E26 /* OCRMSAPIManager.m */,
+				4CCE6DDE1F7D979F008854BD /* CustomURLCache.h */,
+				4CCE6DDF1F7D979F008854BD /* CustomURLCache.m */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -290,6 +307,12 @@
 				4CD30DEA1F6D95790022BD4C /* FaceTableViewCell.m */,
 				4C23E6811F706CA7007E9BAF /* UtilHelper.h */,
 				4C23E6821F706CA7007E9BAF /* UtilHelper.m */,
+				4C0BA91C1F8CE6EE0093C71F /* MainMenuTableViewController.h */,
+				4C0BA91D1F8CE6EE0093C71F /* MainMenuTableViewController.m */,
+				4C0BA91F1F8D4FDA0093C71F /* EmotionViewController.h */,
+				4C0BA9201F8D4FDA0093C71F /* EmotionViewController.m */,
+				4C0BA9221F8D505C0093C71F /* OCRViewController.h */,
+				4C0BA9231F8D505C0093C71F /* OCRViewController.m */,
 			);
 			path = testia;
 			sourceTree = "<group>";
@@ -329,6 +352,7 @@
 				4CD30DC31F6D4E760022BD4C /* FaceRecognitionMSFaceAPIManager.h in Headers */,
 				4C5775791F6DDC2400479E26 /* OCRMSAPIManager.m in Headers */,
 				4CD30DC21F6D4E6F0022BD4C /* EmotionMSAPIManager.h in Headers */,
+				4CCE6DE01F7D979F008854BD /* CustomURLCache.h in Headers */,
 				4CD30DE51F6D632C0022BD4C /* Person.m in Headers */,
 				4CD30DDD1F6D5DE30022BD4C /* PersonGroup.m in Headers */,
 				4CC1C6C71F6D49B300A887E9 /* FaceRecognitionChuiAPIManager.m in Headers */,
@@ -562,6 +586,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CC1C6A81F6D34EA00A887E9 /* ActionViewController.m in Sources */,
+				4CCE6DE21F7D979F008854BD /* CustomURLCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,6 +598,7 @@
 				4CD30DC41F6D501E0022BD4C /* ImageDescription.m in Sources */,
 				4CD30DE41F6D62F20022BD4C /* Person.m in Sources */,
 				4CD30DC51F6D501E0022BD4C /* FaceRecognitionKairosAPIManager.m in Sources */,
+				4CCE6DE31F7D979F008854BD /* CustomURLCache.m in Sources */,
 				4CD30DC61F6D501E0022BD4C /* FaceRecognitionChuiAPIManager.m in Sources */,
 				4C5775781F6DD9B800479E26 /* OCRMSAPIManager.m in Sources */,
 				4CD30DC71F6D501E0022BD4C /* FaceRecognitionMSFaceAPIManager.m in Sources */,
@@ -585,10 +611,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CD30DEB1F6D957A0022BD4C /* FaceTableViewCell.m in Sources */,
+				4CCE6DE11F7D979F008854BD /* CustomURLCache.m in Sources */,
 				4C23E6831F706CA7007E9BAF /* UtilHelper.m in Sources */,
 				4CC76BB41F03C7A700340259 /* ViewController.m in Sources */,
+				4C0BA9211F8D4FDA0093C71F /* EmotionViewController.m in Sources */,
 				4CC76BBF1F03C7A700340259 /* main.m in Sources */,
+				4C0BA91E1F8CE6EE0093C71F /* MainMenuTableViewController.m in Sources */,
 				4CD30DE81F6D69DA0022BD4C /* FacesTableViewController.m in Sources */,
+				4C0BA9241F8D505C0093C71F /* OCRViewController.m in Sources */,
 				4CD30DE01F6D621C0022BD4C /* PersonsTableViewController.m in Sources */,
 				4CD30DD51F6D56CE0022BD4C /* MenuTableViewController.m in Sources */,
 				4CC76BB11F03C7A700340259 /* AppDelegate.m in Sources */,

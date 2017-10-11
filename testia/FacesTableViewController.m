@@ -163,7 +163,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FaceTableViewCell *cell = (FaceTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"FaceTableViewCell" forIndexPath:indexPath];
     NSString *faceId = [_person.persistedFaceIds objectAtIndex: indexPath.row];
+    cell.faceIdLabel.text = faceId;
     
+    /*
     [[FaceRecognitionMSFaceAPIManager shared] imageFaceFromPersonGroup:_personGroup.personGroupId person:_person.personId andFace:faceId withCompletionBlock:^(FaceRecognitionMSFaceAPIManager *service, id object, NSError *error) {
         if (!error)
         {
@@ -194,6 +196,7 @@
             }
         }
     }];
+     */
     return cell;
 }
 

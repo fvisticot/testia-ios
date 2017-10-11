@@ -11,6 +11,7 @@
 #import "ImageDescription.h"
 #import "PersonGroup.h"
 #import "Person.h"
+#import "CustomURLCache.h"
 
 //https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236
 
@@ -33,13 +34,29 @@
 
 - (id)init {
     if (self = [super init]) {
-        _manager = [[AFHTTPSessionManager manager] initWithBaseURL:[NSURL URLWithString: API_GATE]];
+        
+        
+        //https://stackoverflow.com/questions/19855280/how-to-set-nsurlrequest-cache-expiration
+        NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        //sessionConfiguration.requestCachePolicy = NSURLRequestReturnCacheDataElseLoad;
+        
+        /*int cacheSizeMemory = 1*1024*1024;
+        int cacheSizeDisk = 100*1024*1024;
+        [[CustomURLCache sharedURLCache] setMemoryCapacity:cacheSizeMemory];
+        [[CustomURLCache sharedURLCache] setDiskCapacity:cacheSizeDisk];
+        */
+        
+        CustomURLCache *URLCache = [[CustomURLCache alloc] initWithMemoryCapacity:2 * 1024 * 1024
+                                                                     diskCapacity:100 * 1024 * 1024
+                                                                         diskPath:nil];
+        [NSURLCache setSharedURLCache:URLCache];
+        
+        _manager = [[AFHTTPSessionManager manager] initWithBaseURL:[NSURL URLWithString: API_GATE] sessionConfiguration:sessionConfiguration];
         _manager.requestSerializer= [AFJSONRequestSerializer serializer];
         [_manager.requestSerializer setValue:SUBSCRIPTION_KEY forHTTPHeaderField:@"Ocp-Apim-Subscription-Key"];
         [_manager.requestSerializer setTimeoutInterval:10.0];
         [_manager.responseSerializer setAcceptableContentTypes: [NSSet setWithObjects: 
                                                                  @"application/json", nil]];
-        
     }
     return self;
 }
@@ -115,7 +132,7 @@
         {
             NSLog(@"Error: %@", error.localizedDescription);
             completionBlock(self, nil,error);
-        }else{
+        } else{
             NSLog(@"Success");
             completionBlock(self, nil, nil);
         }
@@ -201,6 +218,8 @@
     [_manager GET:urlStr parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         ;
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSHTTPURLResponse *response = ((NSHTTPURLResponse *)[task response]);
+        NSDictionary *headers = [response allHeaderFields];
         NSMutableArray *groups = [NSMutableArray array];
         if (responseObject)
         {

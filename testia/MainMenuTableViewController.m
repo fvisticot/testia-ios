@@ -1,23 +1,22 @@
 //
-//  MenuTableViewController.m
+//  MainMenuTableViewController.m
 //  testia
 //
-//  Created by frederic Visticot on 16/09/2017.
+//  Created by frederic Visticot on 10/10/2017.
 //  Copyright © 2017 fvisticot. All rights reserved.
 //
 
-#import "MenuTableViewController.h"
+#import "MainMenuTableViewController.h"
 
-@interface MenuTableViewController ()
+@interface MainMenuTableViewController ()
 
 @end
 
-@implementation MenuTableViewController
+@implementation MainMenuTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Menu";
-    self.navigationController.navigationBar.prefersLargeTitles=YES;
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -33,11 +32,24 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+#warning Incomplete implementation, return the number of rows
+    return 2;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"PushSegue" sender:self];
+}
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
 }
 
 /*
@@ -84,11 +96,7 @@
 }
 */
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    ;//[self performSegueWithIdentifier:@"PushSegue" sender:self];
-}
-
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -96,6 +104,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-
+*/
 
 @end

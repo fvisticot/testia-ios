@@ -21,17 +21,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"Groups";
+    
     UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addGroup:)];
     self.navigationItem.rightBarButtonItem=addButtonItem;
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self
-                            action:@selector(loadGroups)
+                            action:@selector(refreshLoadGroups)
                   forControlEvents:UIControlEventValueChanged];
     
     [self loadGroups];
 }
 
+-(void)refreshLoadGroups {
+    NSURLCache * cache =[NSURLCache sharedURLCache];
+    [cache removeAllCachedResponses];
+    [self loadGroups];
+}
 -(void)loadGroups
 {
     [[FaceRecognitionMSFaceAPIManager shared] personGroupsWithCompletionBlock:^(FaceRecognitionMSFaceAPIManager *service, id object, NSError *error) {

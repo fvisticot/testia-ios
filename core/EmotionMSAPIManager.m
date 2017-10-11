@@ -45,19 +45,26 @@
     return self;
 }
 
--(void)enrollWithImage: (ImageDescription*)image inGallery: (NSString*)gallery withCompletionBlock: (EmotionMSAPIManagerCompletionBlock)completionBlock
+-(void)analyseEmotionFromImage: (UIImage*)image progress:(void (^)(NSProgress *uploadProgress)) uploadProgressBlock  withCompletionBlock: (EmotionMSAPIManagerCompletionBlock)completionBlock
 {
     //NSData *imageData = UIImagePNGRepresentation(image.image);
-    NSData *imageData = UIImageJPEGRepresentation(image.image, 0.8);
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.8);
     NSError *error;
     NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"POST" URLString:@"https://westus.api.cognitive.microsoft.com/emotion/v1.0/recognize" parameters:nil error:&error];
     [request setValue:SUBSCRIPTION_KEY forHTTPHeaderField:@"Ocp-Apim-Subscription-Key"];
     [request setValue:@"application/octet-stream" forHTTPHeaderField:@"Content-Type"];
     
     NSURLSessionUploadTask *uploadTask = [_manager uploadTaskWithRequest:request fromData:imageData progress:^(NSProgress * _Nonnull uploadProgress) {
-        ;
+        uploadProgressBlock(uploadProgress);
     } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-        ;
+        if (error)
+        {
+            NSLog(@"Error: %@", error.localizedDescription);
+            completionBlock(self, nil,error);
+        } else{
+            NSLog(@"Success");
+            completionBlock(self, responseObject, nil);
+        }
     }];
     
     [uploadTask resume];
